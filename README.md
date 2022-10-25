@@ -9,7 +9,6 @@
 - Google Colab Pro(TPU)
 - Tensorflow 2.9.2
 - keras 2.9.0
-- 
 
 ## Data
 - train(1,000,000 rows X 7 columns)
