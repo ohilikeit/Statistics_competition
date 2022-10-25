@@ -1,2 +1,3 @@
-# Statistics_competition
-통계청에서 주관한 통계활용경진대회에 참여한 결과물이다. Notion으로 작성한 결과물을 md 형식으로 깃허브에 업로드 가능하여 옮겼다.
+![206994_208214_224](https://user-images.githubusercontent.com/37128004/197730936-312a4914-0429-4c2a-aae0-533d36ff8478.jpg)
+# 2022 통계데이터 인공지능 활용대회
+## 
