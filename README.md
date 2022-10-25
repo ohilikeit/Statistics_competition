@@ -14,10 +14,6 @@
 - train(1,000,000 rows X 7 columns)
   - 전국사업체조사 샘플데이터
   - AI_id, digit_1(대분류), digit_2(중분류), digit_3(소분류), text_obj(무엇을 가지고), text_mthd(어떤 방법으로), text_deal(생산,제공하였는가)
-- submit(100,000 rows X 4 columns)
-  - 예측용 test data
-  - digit_1, digit_2, label, document
-  
 ```python
 digit_1	digit_2	label	document
 0	S	95	952	카센터에서 자동차부분정비 타이어오일교환
@@ -33,7 +29,9 @@ digit_1	digit_2	label	document
 999999	I	56	561	사업장에서 접객시설을 갖추고 한식(미역구)판매
 1000000 rows × 4 columns
 ```
-
+- submit(100,000 rows X 4 columns)
+  - 예측용 test data
+  - digit_1, digit_2, label, document
 ## Preprocess
 - class imbalance
   - few class data(<500) augmentation with EDA(Easy Data Augmentation) & class weights
