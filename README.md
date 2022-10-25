@@ -5,10 +5,28 @@
 ## Introduction
 통계청이 주최하는 2022 통계데이터 인공지능 활용대회에 참여한 결과물이다. 자연어 기반의 산업 분류 모델을 만드는 것이였으나 아직 PLM(Pretrained language model)을 공부하기 전이라 알고 있던 CNN 모델구조를 활용하였다. 
 
+## Environment
+- Google Colab Pro(TPU)
+- Tensorflow 2.9.2
+- keras 2.9.0
+- 
+
 ## Data
+- train(1,000,000 rows X 7 columns)
+  - 전국사업체조사 샘플데이터
+  - AI_id, digit_1(대분류), digit_2(중분류), digit_3(소분류), text_obj(무엇을 가지고), text_mthd(어떤 방법으로), text_deal(생산,제공하였는가)
+- submit(100,000 rows X 4 columns)
+  - 예측용 test data
+  - digit_1, digit_2, label, document
 
-
-
+## Preprocess
+- class imbalance
+  - few class data(<500) augmentation with EDA(Easy Data Augmentation) & class weights
+  - class_weight : 
+- tokenizing
+  - 불용어 처리 및 okt 형태소 분석기를 통한 형태소 단위 임베딩
+- train_test_split
+  - train : valid = 9 : 1
 
 
 
