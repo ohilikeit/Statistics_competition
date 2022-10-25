@@ -28,6 +28,37 @@
 - train_test_split
   - train : valid = 9 : 1
 
+## Model
+### Structure
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 30)]              0         
+                                                                 
+ embedding (Embedding)       (None, 30, 1024)          40950784  
+                                                                 
+ conv1d (Conv1D)             (None, 30, 1024)          3146752   
+                                                                 
+ batch_normalization (BatchN  (None, 30, 1024)         4096      
+ ormalization)                                                   
+                                                                 
+ global_max_pooling1d (Globa  (None, 1024)             0         
+ lMaxPooling1D)                                                  
+                                                                 
+ flatten (Flatten)           (None, 1024)              0         
+                                                                 
+ dense (Dense)               (None, 256)               262400    
+                                                                 
+ dropout (Dropout)           (None, 256)               0         
+                                                                 
+ dense_1 (Dense)             (None, 225)               57825     
+                                                                 
+=================================================================
+Total params: 44,421,857
+Trainable params: 44,419,809
+Non-trainable params: 2,048
+_________________________________________________________________
 
 
 
