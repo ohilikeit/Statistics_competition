@@ -30,52 +30,31 @@
 
 ## Model
 ### Structure
-Model: "model"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- input_1 (InputLayer)        [(None, 30)]              0         
-                                                                 
- embedding (Embedding)       (None, 30, 1024)          40950784  
-                                                                 
- conv1d (Conv1D)             (None, 30, 1024)          3146752   
-                                                                 
- batch_normalization (BatchN  (None, 30, 1024)         4096      
- ormalization)                                                   
-                                                                 
- global_max_pooling1d (Globa  (None, 1024)             0         
- lMaxPooling1D)                                                  
-                                                                 
- flatten (Flatten)           (None, 1024)              0         
-                                                                 
- dense (Dense)               (None, 256)               262400    
-                                                                 
- dropout (Dropout)           (None, 256)               0         
-                                                                 
- dense_1 (Dense)             (None, 225)               57825     
-                                                                 
-=================================================================
-Total params: 44,421,857
-Trainable params: 44,419,809
-Non-trainable params: 2,048
-_________________________________________________________________
+![image](https://user-images.githubusercontent.com/37128004/197760197-aa4ce5ba-d17d-4f1a-83ff-54caab4bea84.png)
 
+### Parameter settings
+- Adam optimizer(learning_rate : 0.001)
+- Dropout : 0.5
+- Activation function : ELU
+- Epochs : 20
+- batch_size : 512
+- class_weight
+- callbacks(model checkpoint, ReduceLROnPlateau, earlystop)
 
+## Result
+### train and validate curve
+<a href="https://github.com/ohilikeit/Statistics_competition">
+  <img align="center" src="https://user-images.githubusercontent.com/37128004/197760910-b2062678-28fb-49b0-a972-778e480cd262.png" width="500" height="400" />
+</a>
+<a href="https://github.com/anuraghazra/convoychat">
+  <img align="center" src="https://user-images.githubusercontent.com/37128004/197760960-16d474dd-4b18-4f59-a5c2-972c4ceb2261.png" width="500" height="400" />
+</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### score
+- macro f1 score : 0.8586(private : 0.79)
 
 ## Conclusion
-처음 참여해본 대회로 구현 자체도 어려움이 많았다. 
+- 처음 참여해본 대회로 구현 자체도 어려움이 많았다. 
+- NLP에서 일반적으로 사용하는 PLM이 아닌 CNN으로 접근하여 정확도나 학습 면에서 좋지 못했다. 
+- 현업에선 항상 발생하는 class imbalance 문제를 어떻게 해결할 것인가에 대해 많은 고민을 했다.
+- tensorflow와 keras를 이용해 딥러닝 모델을 짜는 기본적인 방법이나 text 데이터 전처리, tabulr data 전처리, overfitting 방지법 등 많은 것들을 얻었다. 
